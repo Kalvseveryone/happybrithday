@@ -514,6 +514,9 @@ function initAudioPlayer() {
     audio.src = CONFIG.musicUrl;
   }
 
+  // Set volume to maximum
+  audio.volume = 1.0;
+
   toggleBtn.addEventListener("click", () => {
     if (isMusicPlaying) {
       pauseAudio();
@@ -528,6 +531,9 @@ function playAudio() {
   const toggleBtn = document.getElementById("music-toggle");
   
   if (!audio || !toggleBtn) return;
+
+  // Volume maksimum
+  audio.volume = 1.0;
 
   audio.play().then(() => {
     isMusicPlaying = true;
